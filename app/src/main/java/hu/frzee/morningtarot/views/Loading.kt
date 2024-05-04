@@ -29,6 +29,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
@@ -39,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import hu.frzee.morningtarot.R
+import hu.frzee.morningtarot.themes.MorningTarotTheme
 import hu.frzee.morningtarot.themes.bigelowRulesFamily
 
 @Composable
@@ -58,10 +60,12 @@ fun Loading(modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxSize()
                 .weight(weight = 1f)
-                .padding(start = 2.dp,
+                .padding(
+                    start = 2.dp,
                     end = 2.dp,
                     top = 20.dp,
-                    bottom = 31.dp)
+                    bottom = 31.dp
+                )
         ) {
                 Image(
                     painter = painterResource(id = R.mipmap.main_image),
@@ -69,8 +73,10 @@ fun Loading(modifier: Modifier = Modifier) {
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(alignment = Alignment.CenterHorizontally)
-                        .offset(x = 0.dp,
-                            y = 0.dp)
+                        .offset(
+                            x = 0.dp,
+                            y = 0.dp
+                        )
                         .requiredWidth(width = 356.dp)
                         .requiredHeight(height = 252.dp))
             Row(
@@ -122,13 +128,10 @@ fun Loading(modifier: Modifier = Modifier) {
 }
 
 @Preview(widthDp = 360, heightDp = 800,
-    uiMode = Configuration.UI_MODE_TYPE_NORMAL,
-    showBackground = true,
     name = "Light Mode")
 @Preview(
     widthDp = 360, heightDp = 800,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
-    showBackground = true,
     name = "Dark Mode"
 )
 @Composable
