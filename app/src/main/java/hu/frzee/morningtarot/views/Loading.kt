@@ -39,18 +39,24 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import hu.frzee.morningtarot.R
+import hu.frzee.morningtarot.navigation.NavigationItem
+import hu.frzee.morningtarot.navigation.Screen
 import hu.frzee.morningtarot.themes.MorningTarotTheme
+import hu.frzee.morningtarot.themes.Typography_Card
 import hu.frzee.morningtarot.themes.bigelowRulesFamily
 
 @Composable
-fun Loading(modifier: Modifier = Modifier) {
+fun Loading(
+    onSetAlarmNavigate: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
-            .requiredWidth(width = 360.dp)
             .fillMaxWidth()
-            .requiredHeight(height = 800.dp)
             .fillMaxHeight()
             .background(MaterialTheme.colorScheme.background)
     ) {
@@ -64,7 +70,7 @@ fun Loading(modifier: Modifier = Modifier) {
                     start = 2.dp,
                     end = 2.dp,
                     top = 20.dp,
-                    bottom = 31.dp
+                    bottom = 50.dp
                 )
         ) {
                 Image(
@@ -80,7 +86,7 @@ fun Loading(modifier: Modifier = Modifier) {
                         .requiredWidth(width = 356.dp)
                         .requiredHeight(height = 252.dp))
             Row(
-                horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.Start),
+                horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -88,20 +94,14 @@ fun Loading(modifier: Modifier = Modifier) {
             ) {
                 Text(
                     text = "Ébredj Tarot húzással!",
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer,
                     textAlign = TextAlign.Center,
-                    style = TextStyle(
-                        fontFamily = bigelowRulesFamily,
-                        fontWeight = FontWeight.Normal,
-                        fontSize = 64.sp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .requiredHeight(height = 156.dp))
+                    style = Typography_Card.displayLarge,)
             }
             Button(
-                onClick = { },
+                onClick = onSetAlarmNavigate,
                 shape = RoundedCornerShape(100.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Black),
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer),
                 contentPadding = PaddingValues(horizontal = 24.dp, vertical = 10.dp),
                 modifier = Modifier
                     .requiredHeight(height = 40.dp)
@@ -114,7 +114,7 @@ fun Loading(modifier: Modifier = Modifier) {
                 ) {
                         Text(
                             text = "Ébresztés beállítása",
-                            color = Color.White,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer,
                             textAlign = TextAlign.Center,
                             lineHeight = 1.43.em,
                             style = MaterialTheme.typography.labelLarge,
@@ -136,5 +136,10 @@ fun Loading(modifier: Modifier = Modifier) {
 )
 @Composable
 private fun LoadPreview() {
-    Loading(Modifier)
+    MorningTarotTheme {
+        Loading(
+            { },
+            Modifier
+        )
+    }
 }
