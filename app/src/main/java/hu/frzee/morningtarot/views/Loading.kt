@@ -67,10 +67,12 @@ fun Loading(
             modifier = Modifier
                 .fillMaxSize()
                 .weight(weight = 1f)
-                .padding(start = 2.dp,
+                .padding(
+                    start = 2.dp,
                     end = 2.dp,
                     top = 20.dp,
-                    bottom = 31.dp)
+                    bottom = 50.dp
+                )
         ) {
                 Image(
                     painter = painterResource(id = R.mipmap.main_image),
