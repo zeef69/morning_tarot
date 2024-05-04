@@ -66,12 +66,10 @@ fun Loading(
             modifier = Modifier
                 .fillMaxSize()
                 .weight(weight = 1f)
-                .padding(
-                    start = 2.dp,
+                .padding(start = 2.dp,
                     end = 2.dp,
-                    top = 30.dp,
-                    bottom = 50.dp
-                )
+                    top = 20.dp,
+                    bottom = 31.dp)
         ) {
                 Image(
                     painter = painterResource(id = R.mipmap.main_image),
@@ -132,6 +130,7 @@ fun Loading(
 @Preview(
     widthDp = 360, heightDp = 800,
     uiMode = Configuration.UI_MODE_NIGHT_YES,
+    showBackground = true,
     name = "Dark Mode"
 )
 @Composable
