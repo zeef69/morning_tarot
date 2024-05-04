@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import hu.frzee.morningtarot.R
+import hu.frzee.morningtarot.themes.MorningTarotTheme
 import hu.frzee.morningtarot.navigation.NavigationItem
 import hu.frzee.morningtarot.navigation.Screen
 import hu.frzee.morningtarot.themes.MorningTarotTheme
