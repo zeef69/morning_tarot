@@ -67,7 +67,7 @@ fun AppNavHost(
                     Screen.Loading.name ->
                         slideIntoContainer(
                             AnimatedContentTransitionScope.SlideDirection.Left,
-                            animationSpec = tween(700)
+                            animationSpec = tween(300)
                         )
 
                     else -> null
@@ -78,7 +78,7 @@ fun AppNavHost(
                     Screen.Loading.name ->
                         slideOutOfContainer(
                             AnimatedContentTransitionScope.SlideDirection.Right,
-                            animationSpec = tween(700)
+                            animationSpec = tween(300)
                         )
 
                     else -> null
